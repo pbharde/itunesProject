@@ -24,7 +24,7 @@
 }
 .img-size{
    width:30%;
-   height:30%
+   height:30%;
 }
 
 .img-layout{
@@ -60,6 +60,7 @@ h2{
 p{
   color:#696969;
   font-family: Arial;
+  width: 100%;
 }
 
 .container{
@@ -71,12 +72,12 @@ p{
       grid-template-columns: repeat(3, 1fr);
       grid-column-gap:1em;
       grid-row-gap:1em;
-      max-width: 100%;
+      max-width: 59%;
     }
-    /* .container > div{
+     .container > div{
       background: #eee;
       padding: 1em;
     }
-    .container > div:nth-child(odd){
+    /*.container > div:nth-child(odd){
       background: #ddd;
     } */

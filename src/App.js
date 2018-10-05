@@ -43,9 +43,21 @@ getArtistName(event){
 
   render() {
     const exist = this.state.exist;
-    let artistName;
+    let artistName, grid;
   if (exist) {
     artistName = <h2>Albums of {this.state.ARTIST_NAME}</h2>;
+    grid = <ul className="container">
+
+    {this.state.data.map(function(item, index){
+        return(
+          <div>
+            <p>{item.collectionName}</p>
+            <img src={item.artworkUrl100} alt={item.collectionName} className="img-size"/>
+          </div>
+        )
+    }
+    )}
+    </ul>;
     this.state.ARTIST_NAME="";
     this.state.exist=false;
   }
@@ -55,20 +67,8 @@ getArtistName(event){
         <input type="text" placeholder="Search Artist.."  value={this.state.ARTIST_NAME}  name="search" onChange={this.getArtistName} required/>
         <button type="submit" className="button" onClick={this.fetchData}><i className="fa fa-search"></i></button>
         {artistName}
-        <ul className="container">
-
-        {this.state.data.map(function(item, index){
-            return(
-              <div>
-                <p>{item.collectionName}</p>
-                <img src={item.artworkUrl100} alt={item.collectionName} className="img-size"/>
-              </div>
-            )
-        }
-        )}
-        </ul>
+        {grid}
       </form>
-
     )
   }
 }
